@@ -1,0 +1,10 @@
+{
+  "name": "testcafe-visual-regression",
+  "scripts": {
+    "test": "node_modules/testcafe/bin/testcafe.js chrome tests/main.js"
+  },
+  "dependencies": {
+    "pixelmatch": "^4.0.2",
+    "testcafe": "^0.15.0"
+  }
+}
