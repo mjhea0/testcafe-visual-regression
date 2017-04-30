@@ -1,18 +1,21 @@
 const path = require('path');
 const Selector = require('testcafe').Selector;
 
-const compareImages = require('./_compare').compareImages;
+const config = require('./_config.json');
+const compareImages = require('../compare').compareImages;
 
 // get image name
 var imageName = 'actual';
 if (process.env.type === 'base') imageName = 'base';
 
-fixture('Visual Regression Test')
-.page('http://mherman.org/testcafe-visual-regression/02.html');
-
-test('hello, world', async (t) => {
-  await t.takeScreenshot(imageName);
-  if (!await compareImages()) {
-    throw new Error('Images are different');
-  }
-});
+config.forEach((el) => {
+  fixture('Visual Regression Test')
+  .page(el.url);
+  test(el.title, async (t) => {
+    await t.takeScreenshot(`${el.title}-${imageName}`);
+    if (imageName === 'actual') {
+      const results = await compareImages(el.title);
+      if (!results) throw new Error(`${el.title} images are different`);
+    }
+  });
+})

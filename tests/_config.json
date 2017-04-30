@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "home",
+    "url": "http://mherman.org/testcafe-visual-regression/01.html"
+  },
+  {
+    "id": 2,
+    "title": "register",
+    "url": "http://mherman.org/testcafe-visual-regression/02.html"
+  }
+]
