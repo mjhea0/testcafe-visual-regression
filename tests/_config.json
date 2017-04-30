@@ -8,5 +8,10 @@
     "id": 2,
     "title": "register",
     "url": "http://mherman.org/testcafe-visual-regression/02.html"
+  },
+  {
+    "id": 3,
+    "title": "login",
+    "url": "http://mherman.org/testcafe-visual-regression/03.html"
   }
 ]

@@ -15,7 +15,10 @@ config.forEach((el) => {
     await t.takeScreenshot(`${el.title}-${imageName}`);
     if (imageName === 'actual') {
       const results = await compareImages(el.title);
-      if (!results) throw new Error(`${el.title} images are different`);
+      if (!results) {
+        el.same = false;
+        throw new Error(`${el.title} images are different`);
+      }
     }
   });
 })
