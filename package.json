@@ -1,10 +1,10 @@
 {
   "name": "testcafe-visual-regression",
   "scripts": {
-    "test": "node_modules/testcafe/bin/testcafe.js chrome tests/main.js"
+    "test": "testcafe 'chrome --kiosk' tests/main.js -s tests/screenshots"
   },
   "dependencies": {
-    "pixelmatch": "^4.0.2",
+    "image-diff": "^1.6.3",
     "testcafe": "^0.15.0"
   }
 }
