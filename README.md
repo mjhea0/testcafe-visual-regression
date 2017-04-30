@@ -7,7 +7,6 @@ Basic example
 1. Fork/Clone
 1. Install dependencies - `npm install`
 1. Test - `npm test`
-1. Compare - `node tests/_compare.js`
 1. View Results - `open tests/screenshots/index.html`
 
 ## Example

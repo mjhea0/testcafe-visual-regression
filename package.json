@@ -1,7 +1,8 @@
 {
   "name": "testcafe-visual-regression",
   "scripts": {
-    "test": "testcafe 'chrome --kiosk' tests/main.js -s tests/screenshots"
+    "test": "env type=actual testcafe 'chromium --kiosk' tests/main.js -s tests/screenshots",
+    "base": "env type=base testcafe 'chromium --kiosk' tests/main.js -s tests/screenshots"
   },
   "dependencies": {
     "image-diff": "^1.6.3",
