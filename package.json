@@ -2,10 +2,13 @@
   "name": "testcafe-visual-regression",
   "scripts": {
     "test": "env type=actual testcafe 'chromium --kiosk' tests/main.js -s tests/screenshots",
-    "base": "env type=base testcafe 'chromium --kiosk' tests/main.js -s tests/screenshots"
+    "base": "env type=base testcafe 'chromium --kiosk' tests/main.js -s tests/screenshots",
+    "report": "node src/app.js"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "image-diff": "^1.6.3",
+    "nunjucks": "^3.0.0",
     "testcafe": "^0.15.0"
   }
 }

@@ -1,8 +1,8 @@
 const path = require('path');
 const Selector = require('testcafe').Selector;
 
-const config = require('./_config.json');
-const compareImages = require('../compare').compareImages;
+const config = require('../src/_config.json');
+const compareImages = require('../src/compare').compareImages;
 
 // get image name
 var imageName = 'actual';
@@ -12,9 +12,9 @@ config.forEach((el) => {
   fixture('Visual Regression Test')
   .page(el.url);
   test(el.title, async (t) => {
-    await t.takeScreenshot(`${el.title}-${imageName}`);
+    await t.takeScreenshot(`${el.id}-${el.title}-${imageName}`);
     if (imageName === 'actual') {
-      const results = await compareImages(el.title);
+      const results = await compareImages(el.id, el.title);
       if (!results) throw new Error(`${el.title} images are different`);
     }
   });
